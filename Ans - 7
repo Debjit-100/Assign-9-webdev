@@ -1,0 +1,84 @@
+Conditional rendering in React allows you to show or hide components or elements based on certain conditions. React provides several techniques for handling conditional rendering. Here are a few common approaches:
+
+If Statements or Ternary Operator:
+import React from 'react';
+
+const MyComponent = ({ isLoggedIn }) => {
+  if (isLoggedIn) {
+    return <div>Welcome, User!</div>;
+  } else {
+    return <div>Please log in.</div>;
+  }
+};
+
+export default MyComponent;
+In this example, the isLoggedIn prop determines which element is rendered. If the user is logged in, it displays the "Welcome, User!" message; otherwise, it shows the "Please log in." message.
+
+&& Operator:
+
+import React from 'react';
+
+const MyComponent = ({ isLoggedIn }) => {
+  return (
+    <div>
+      {isLoggedIn && <div>Welcome, User!</div>}
+      {!isLoggedIn && <div>Please log in.</div>}
+    </div>
+  );
+};
+
+export default MyComponent;
+The && operator is used to conditionally render elements. If the condition (isLoggedIn) is true, the corresponding element is rendered; otherwise, it is skipped.
+
+Element Variables:
+
+import React from 'react';
+
+const MyComponent = ({ isLoggedIn }) => {
+  let message;
+  if (isLoggedIn) {
+    message = <div>Welcome, User!</div>;
+  } else {
+    message = <div>Please log in.</div>;
+  }
+
+  return <div>{message}</div>;
+};
+
+export default MyComponent;
+In this approach, an element variable (message) is declared based on the condition. The corresponding JSX element is assigned to the variable, and then the variable is rendered.
+
+Ternary Operator:
+
+import React from 'react';
+
+const MyComponent = ({ isLoggedIn }) => {
+  return (
+    <div>{isLoggedIn ? <div>Welcome, User!</div> : <div>Please log in.</div>}</div>
+  );
+};
+
+export default MyComponent;
+The ternary operator is used to conditionally render different elements based on the condition. If the condition (isLoggedIn) is true, the first expression (<div>Welcome, User!</div>) is rendered; otherwise, the second expression (<div>Please log in.</div>) is rendered.
+
+Switch Statement (for more complex conditions):
+
+import React from 'react';
+
+const MyComponent = ({ status }) => {
+  switch (status) {
+    case 'loading':
+      return <div>Loading...</div>;
+    case 'success':
+      return <div>Data loaded successfully!</div>;
+    case 'error':
+      return <div>Error occurred while loading data.</div>;
+    default:
+      return null;
+  }
+};
+
+export default MyComponent;
+In this example, the status prop is used to determine which element to render based on different cases. The appropriate JSX element is returned for each case, and a default case is included for handling any other values.
+
+These are some of the common techniques for handling conditional rendering in React. The approach you choose depends on the complexity of the conditions and the desired structure of your components.

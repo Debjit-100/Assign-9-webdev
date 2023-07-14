@@ -1,0 +1,21 @@
+In React, hooks are functions that allow you to use state and other React features in functional components. They were introduced in React 16.8 as a way to write reusable logic that previously could only be done with class components and lifecycle methods.
+
+Hooks are identified by the naming convention. The name of a hook always starts with the word "use". This convention is essential because it allows React to perform certain checks and ensure that hooks are used correctly.
+
+There are several built-in hooks provided by React, such as:
+
+useState: It allows you to add state to a functional component. It returns an array with two elements: the current state value and a function to update that state.
+
+useEffect: It allows you to perform side effects in your component, such as fetching data, subscribing to events, or manipulating the DOM. It runs after every render of the component.
+
+useContext: It allows you to access the value of a React context within a functional component.
+
+useRef: It provides a way to store mutable values that persist across component renders.
+
+useMemo: It allows you to memoize expensive calculations, so they are only recomputed when their dependencies change.
+
+useCallback: It returns a memoized version of the callback function that only changes if one of the dependencies has changed. It's useful when passing callbacks to child components to optimize performance.
+
+These are just a few examples of the built-in hooks provided by React. Additionally, you can create your own custom hooks by combining these hooks or creating reusable logic specific to your application.
+
+Remember that hooks can only be used in functional components, not in regular JavaScript functions or class components prior to React 16.8.
